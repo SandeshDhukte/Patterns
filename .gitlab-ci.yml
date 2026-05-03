@@ -1,0 +1,26 @@
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  script:
+    - echo "Building Java project..."
+    - javac program11.java
+  artifacts:
+    paths:
+      - Pattern11.class
+    expire_in: 1 hour
+  allow_failure: false
+
+test:
+  stage: test
+  script:
+    - echo "Testing Java program..."
+    - echo "3" | java Pattern11
+    - echo "Program executed successfully"
+  dependencies:
+    - build
+  allow_failure: false
+  only:
+    - push
