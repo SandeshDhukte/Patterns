@@ -14,9 +14,9 @@ class Pattern11{
 		int x = sc.nextInt();
 		int sum = 0;
 
-		for(int i = 1; i <= x; i++){
+		for(int i = 1; i <= x; i++)
 			sum += i;
-		}
+		
 		int n = sum;
 		for(int i = 1; i <= x; i++){
 			for(int k = 1; k <= (x-i); k++)
